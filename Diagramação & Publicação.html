@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Orçamento Editorial | Input Criativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --p-green: #7cfc00;
+            --p-cyan: #00f2d3;
+            --p-blue: #0099cc;
+            --dark: #050a15;
+            --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+        }
+
+        body { background: #f0f2f5; font-family: 'Inter', sans-serif; padding: 40px 20px; color: #333; }
+        .proposal-card {
+            max-width: 850px; margin: 0 auto; background: #fff;
+            border-radius: 24px; overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
+
+        .header {
+            background: var(--dark); padding: 50px 40px; color: #fff;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo-text { font-family: 'Montserrat'; font-weight: 900; font-size: 1.6rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .content { padding: 45px; }
+        h1 { font-family: 'Montserrat'; font-size: 1.8rem; color: var(--dark); margin-bottom: 10px; }
+        .service-desc { color: #64748b; margin-bottom: 35px; border-left: 4px solid var(--p-green); padding-left: 20px; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th { text-align: left; padding: 15px; background: #f8fafc; color: #64748b; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        td { padding: 25px 15px; border-bottom: 1px dotted #e2e8f0; }
+
+        .price-tag { font-weight: 800; color: var(--dark); font-size: 1.1rem; }
+        .feature-badge {
+            display: inline-block; padding: 5px 12px; border-radius: 6px;
+            font-size: 0.7rem; font-weight: 700; background: #f1f5f9; color: #475569;
+        }
+
+        .total-section {
+            background: #f8fafc; border-radius: 20px; padding: 35px;
+            display: flex; justify-content: space-between; align-items: center;
+            border: 2px solid #edf2f7;
+        }
+
+        .btn-cta {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 18px 35px; background: var(--gradient);
+            color: #000; text-decoration: none; font-weight: 800;
+            border-radius: 50px; font-size: 0.9rem; transition: 0.4s ease;
+            box-shadow: 0 10px 20px rgba(124, 252, 0, 0.2);
+        }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(124, 252, 0, 0.4); }
+
+        .footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="proposal-card">
+        <div class="header">
+            <div>
+                <div class="logo-text">INPUT CRIATIVO</div>
+                <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">Produção Editorial & Design Digital</p>
+            </div>
+            <div style="text-align: right;">
+                <p style="font-size: 0.9rem; font-weight: 700;">GEORGE BATISTA</p>
+                <p style="font-size: 0.8rem; opacity: 0.7;">Fortaleza, Ceará</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Orçamento de Produção de eBook</h1>
+            <p class="service-desc">Transformando seu manuscrito em um produto digital de alta performance para Amazon KDP e plataformas de vendas.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serviço Editorial</th>
+                        <th>Detalhes</th>
+                        <th>Investimento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Diagramação Profissional</strong><br>
+                            <span class="feature-badge">EPUB & PDF</span>
+                        </td>
+                        <td style="font-size: 0.85rem; color: #64748b;">Organização de capítulos, sumário interativo e design interno exclusivo.</td>
+                        <td class="price-tag">R$ 450,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Design de Capa de Alto Impacto</strong><br>
+                            <span class="feature-badge">3D MOCKUP</span>
+                        </td>
+                        <td style="font-size: 0.85rem; color: #64748b;">Criação de capa seguindo padrões de best-sellers (ex: O Segredo do Rio Tapajós).</td>
+                        <td class="price-tag">R$ 200,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Consultoria KDP & Marketing</strong><br>
+                            <span class="feature-badge">AMAZON READY</span>
+                        </td>
+                        <td style="font-size: 0.85rem; color: #64748b;">Configuração de palavras-chave, categorias e estratégia de lançamento.</td>
+                        <td class="price-tag">R$ 150,00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="total-section">
+                <div>
+                    <p style="color: #64748b; font-size: 0.9rem; font-weight: 600;">Total do Investimento Editorial</p>
+                    <h2 style="font-size: 2.2rem; color: var(--dark); margin-top: 5px;">R$ 800,00</h2>
+                </div>
+                <a href="https://wa.me/5585987784930" class="btn-cta">INICIAR MEU EBOOK <i class="fas fa-book-open"></i></a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Input Criativo | George Batista</p>
+            <p style="margin-top: 5px;">Ideias Entram. Inovação Explode.</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Criativo | Inovação & Design Digital</title>
+    
+    <link rel="icon" type="image/png" href="fivecom.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --p-green: #7cfc00;
+            --p-cyan: #00f2d3;
+            --p-blue: #0099cc;
+            --dark: #050a15;
+            --glass: rgba(15, 23, 42, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background: var(--dark); color: #fff; overflow-x: hidden; line-height: 1.6; }
+
+        /* --- Navegação --- */
+        header.main-header {
+            position: fixed; top: 0; width: 100%; padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 10000; background: var(--glass);
+            backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo { font-weight: 900; font-size: 1.6rem; font-family: 'Montserrat'; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        
+        nav { display: flex; align-items: center; gap: 20px; }
+        .nav-link { color: #cbd5e1; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: var(--transition); }
+        .nav-link:hover { color: var(--p-cyan); }
+
+        /* --- Dropdowns --- */
+        .dropdown { position: relative; padding: 10px 0; }
+        .dropdown-content {
+            display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+            background: rgba(10, 15, 28, 0.98); min-width: 260px; 
+            border: 1px solid var(--glass-border); border-radius: 12px; padding: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .dropdown:hover .dropdown-content { display: block; animation: slideUp 0.3s ease; }
+        .dropdown-content a { color: #94a3b8; padding: 10px; text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 0.78rem; border-radius: 8px; transition: 0.2s; }
+        .dropdown-content a:hover { background: rgba(255,255,255,0.05); color: var(--p-green); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; 
+            align-items: center; text-align: center; padding: 0 5%;
+            background: linear-gradient(rgba(5, 10, 21, 0.7), rgba(5, 10, 21, 0.8)), url('inputcriativo2.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-family: 'Montserrat'; font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+        .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: #e2e8f0; max-width: 800px; font-size: 1.2rem; margin-bottom: 40px; }
+
+        .btn-main { 
+            background: var(--gradient); color: #000; padding: 18px 45px; 
+            border-radius: 50px; font-weight: 800; text-decoration: none; 
+            display: inline-flex; align-items: center; gap: 12px;
+            transition: var(--transition); text-transform: uppercase; font-size: 0.9rem;
+            box-shadow: 0 10px 20px rgba(0, 242, 211, 0.2);
+        }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 242, 211, 0.4); }
+
+        /* --- Seções de Conteúdo --- */
+        .section-padding { padding: 120px 8%; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-family: 'Montserrat'; font-size: 2.8rem; margin-bottom: 15px; }
+        .section-header h2 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- Grid de Portfólio (Todos os 7 Livros) --- */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .portfolio-item { 
+            position: relative; border-radius: 20px; overflow: hidden; 
+            aspect-ratio: 2/3; border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .portfolio-overlay { 
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
+            background: linear-gradient(transparent, rgba(5,10,21,0.95));
+            opacity: 0; transition: 0.3s;
+        }
+        .portfolio-item:hover img { transform: scale(1.1); }
+        .portfolio-item:hover { border-color: var(--p-cyan); box-shadow: 0 0 20px rgba(0, 242, 211, 0.2); }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+        /* --- Botões Flutuantes --- */
+        .floating-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+        
+        .float-btn {
+            width: 60px; height: 60px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 1.8rem;
+            color: #fff; text-decoration: none; transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-whatsapp { background: #25d366; }
+        .btn-music { background: var(--glass); color: var(--p-cyan); }
+        
+        .float-btn:hover { transform: scale(1.1) rotate(10deg); border-color: #fff; }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .floating-buttons { bottom: 20px; right: 20px; }
+            .float-btn { width: 50px; height: 50px; font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #050a15; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 20000; transition: opacity 0.8s ease;">
+    <div class="loader-logo" style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2rem; background: linear-gradient(135deg, #7cfc00, #00f2d3, #0099cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; letter-spacing: -1px; animation: pulse 1.5s infinite;">
+        INPUT CRIATIVO
+    </div>
+    <div class="loader-bar" style="width: 200px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative;">
+        <div class="loader-progress" style="width: 0%; height: 100%; background: linear-gradient(90deg, #7cfc00, #00f2d3); position: absolute; animation: load 2s ease-in-out forwards;"></div>
+    </div>
+</div>
+
+<style>
+    @keyframes pulse {
+        0% { transform: scale(0.98); opacity: 0.7; }
+        50% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(0.98); opacity: 0.7; }
+    }
+    @keyframes load {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+</style>
+    <div class="floating-buttons">
+        <a href="#" class="float-btn btn-music" title="Música do Site">
+            <i class="fas fa-music"></i>
+        </a>
+        <a href="https://wa.me/5585987784930" class="float-btn btn-whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">INPUT CRIATIVO</a>
+        <nav>
+    <a href="index.html" class="nav-link">Início</a>
+    
+    <a href="logomarcas.html" class="nav-link">Logomarcas</a>
+
+    <div class="dropdown">
+        <a href="#" class="nav-link">Sites <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="Advocacia de Luxo.html">Advocacia de Luxo</a>
+            <a href="clinica-odonto.html">clinica odontologica</a>
+            <a href="pet.html">petshop</a>
+            <a href="salao_premium.html">salao premium</a>
+            <a href="moda.html">moda</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a href="#" class="nav-link">Cartões Digitais <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="cartão de visita digital com NFC.html">cartão de visita digital com NFC</a>
+            <a href="cartão de visita interativo.html">cartão de visita interativo</a>
+            <a href="cartão NFC.html">cartão NFC</a>
+            <a href="cartão Realidade aumentada.html">cartão Realidade aumentada</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a href="#" class="nav-link">eBooks <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="segredo-tapajos.html">O Segredo do Rio Tapajós</a>
+            <a href="uma-vida-roubada.html">Uma Vida Roubada</a>
+            <a href="ceus-e-abismos.html">Entre Céus e Abismos</a>
+            <a href="jose-do-egito.html">José do Egito</a>
+            <a href="desejo-pesadelo.html">O desejo que Virou Pesadelo</a>
+            <a href="mapa-da-alma.html">O Mapa da Alma</a>
+            <a href="sinfonia-do-vazio.html">A Sifonia do Vazio</a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5585987784930" class="btn-main" style="padding: 10px 25px; font-size: 0.75rem;">Orçamento</a>
+</nav>
+    </header>
+
+    <section class="hero">
+        <h1>Sua Presença Digital <br><span>Elevada ao Máximo.</span></h1>
+        <p>Inovação, Design e Tecnologia Imersiva em Fortaleza. Criamos soluções que conectam sua marca ao futuro.</p>
+        <div style="display: flex; gap: 20px;">
+            <a href="#portfolio" class="btn-main">Ver Portfólio</a>
+            <a href="realidade-aumentada.html" class="btn-main" style="background: transparent; color: #fff; border: 2px solid var(--p-cyan);">Tecnologia RA</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding container">
+        <div class="section-header">
+            <h2>Nossa <span>Vitrine Criativa</span></h2>
+            <p>Explore as obras e projetos que definem o padrão George Batista de excelência.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="livro01.png" alt="Rio Tapajós">
+                <div class="portfolio-overlay"><h4>Rio Tapajós</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="02livro.png" alt="José do Egito">
+                <div class="portfolio-overlay"><h4>José do Egito</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="livro02.png" alt="Sinfonia do Vazio">
+                <div class="portfolio-overlay"><h4>Sinfonia do Vazio</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="livro04.png" alt="Céus e Abismos">
+                <div class="portfolio-overlay"><h4>Céus e Abismos</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="05livro.png" alt="Uma Vida Roubada">
+                <div class="portfolio-overlay"><h4>Uma Vida Roubada</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="livro03.png" alt="Trabalho de George">
+                <div class="portfolio-overlay"><h4>O Mapa da Alma</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="07livro.png" alt="Pesadelo">
+                <div class="portfolio-overlay"><h4>Desejo e Pesadelo</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 60px 8%; border-top: 1px solid var(--glass-border);">
+        <p>© 2026 Input Criativo | George Batista - Fortaleza/CE</p>
+    </footer>
+<audio id="bgMusic" loop>
+    <source src="O Pulso da Ideia.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<script>
+    const musicBtn = document.querySelector('.btn-music');
+    const audio = document.getElementById('bgMusic');
+    let isPlaying = false;
+
+    musicBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (isPlaying) {
+            audio.pause();
+            musicBtn.style.color = 'var(--p-cyan)';
+            musicBtn.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
+            musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+        } else {
+            audio.play().catch(error => {
+                console.log("O navegador bloqueou o autoplay. Clique novamente para tocar.");
+            });
+            musicBtn.style.color = '#000';
+            musicBtn.style.background = 'var(--gradient)';
+            musicBtn.style.boxShadow = '0 0 20px var(--p-cyan)';
+            musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        }
+        isPlaying = !isPlaying;
+    });
+</script>
+<script>
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        // Pequeno delay para garantir que a animação seja vista
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 800);
+        }, 2000);
+    });
+</script>
+</body>
+</html>
