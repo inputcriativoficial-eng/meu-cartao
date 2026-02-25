@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição Profissional | Input Criativo</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Ajustes específicos para manter a alma da Input Criativo nesta página */
+        .video-hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 153, 204, 0.1) 0%, var(--bg-dark) 80%);
+            border-bottom: 2px solid var(--glass-border);
+        }
+
+        .video-hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-container { 
+            padding: 80px 5%; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        }
+        
+        /* Cards com efeito de vidro (Glassmorphism) */
+        .edit-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: 0.4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .edit-card:hover { 
+            border-color: var(--mid-cyan);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 242, 211, 0.1);
+        }
+
+        .edit-card i { 
+            font-size: 2.5rem; 
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px; 
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16/9;
+            background: rgba(255,255,255,0.02);
+            margin: 40px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--glass-border);
+            border-radius: 20px;
+        }
+
+        .cta-video {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(to top, rgba(124, 252, 0, 0.05), transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">INPUT CRIATIVO</div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="ebooks.html">E-books</a>
+            <a href="nfc.html">NFC</a>
+            <a href="sites.html">Sites</a>
+            <a href="https://wa.me/+5585987784930" class="btn-main">Orçamento</a>
+        </nav>
+    </header>
+
+    <section class="video-hero">
+        <div style="background: rgba(0, 242, 211, 0.1); color: var(--mid-cyan); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 20px;">AUDIOVISUAL DE ALTA PERFORMANCE</div>
+        <h1>Cortes que <span>Viciam.</span><br>Imagens que <span>Vendem.</span></h1>
+        <p style="color: var(--text-dim); max-width: 650px; margin-top: 20px;">Transformamos arquivos brutos em conteúdo magnético. Edição dinâmica para Reels, YouTube e Criativos de Alta Conversão.</p>
+    </section>
+
+    <div class="service-container">
+        <div class="edit-card">
+            <i class="fas fa-film"></i>
+            <h3>Edição de Vídeo</h3>
+            <p style="color: var(--text-dim);">Cortes dinâmicos, legendas magnéticas, sonoplastia e color grading para retenção máxima.</p>
+        </div>
+        <div class="edit-card">
+            <i class="fas fa-camera-retro"></i>
+            <h3>Design Visual</h3>
+            <p style="color: var(--text-dim);">Tratamento de imagem profissional e criação de identidades visuais de impacto.</p>
+        </div>
+        <div class="edit-card">
+            <i class="fas fa-ad"></i>
+            <h3>Criativos para Ads</h3>
+            <p style="color: var(--text-dim);">Vídeos curtos e banners otimizados para campanhas de tráfego pago.</p>
+        </div>
+    </div>
+
+    <section class="preview-section" style="text-align: center; padding: 60px 5%;">
+        <h2 style="font-size: 2rem;">Seu conteúdo em outro nível</h2>
+       <div class="video-placeholder" style="border: none; overflow: hidden;">
+    <video width="100%" height="100%" controls poster="input criativo,logo.png" style="object-fit: cover;">
+        <source src="Locução_Viral_Para_Vip_Jardim.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+</div>
+    </section>
+
+    <section class="cta-video">
+        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">PRONTO PARA VIRALIZAR?</h2>
+        <a href="https://wa.me/+5585987784930" class="btn-main">Solicitar Edição Agora</a>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid var(--glass-border);">
+        <p style="color: var(--text-dim);">&copy; 2026 Input Criativo | George Batista</p>
+    </footer>
+    
+
+</body>
+</html>

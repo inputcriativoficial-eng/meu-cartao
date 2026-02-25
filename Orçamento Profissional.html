@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Orçamento | Input Criativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --p-green: #7cfc00;
+            --p-cyan: #00f2d3;
+            --p-blue: #0099cc;
+            --dark: #050a15;
+            --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+        }
+
+        body { background: #f4f7f6; font-family: 'Inter', sans-serif; padding: 40px 20px; color: #333; }
+        
+        /* --- Papel Timbrado Digital --- */
+        .proposal-card {
+            max-width: 800px; margin: 0 auto; background: #fff;
+            border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: var(--dark); padding: 40px; color: #fff;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo-text { font-family: 'Montserrat'; font-weight: 900; font-size: 1.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .content { padding: 40px; }
+        
+        h1 { font-family: 'Montserrat'; font-size: 1.8rem; margin-bottom: 20px; color: var(--dark); }
+        .client-info { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+
+        /* --- Tabela de Itens --- */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { text-align: left; padding: 15px; background: #f8fafc; color: #64748b; font-size: 0.8rem; text-transform: uppercase; }
+        td { padding: 20px 15px; border-bottom: 1px solid #f1f5f9; }
+
+        .tech-tag {
+            display: inline-block; padding: 4px 12px; border-radius: 50px;
+            font-size: 0.7rem; font-weight: 800; background: #ebfefb; color: #0099cc;
+        }
+
+        .total-box {
+            background: var(--dark); color: #fff; padding: 30px;
+            border-radius: 15px; margin-top: 30px; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+
+        /* --- Botão Estilo Padrão (Imagem 3) --- */
+        .btn-approve {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 30px; background: var(--gradient);
+            color: #000; text-decoration: none; font-weight: 800;
+            border-radius: 50px; font-size: 0.9rem; transition: 0.3s;
+        }
+
+        .footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="proposal-card">
+        <div class="header">
+            <div class="logo-text">INPUT CRIATIVO</div>
+            <div style="text-align: right;">
+                <p style="font-size: 0.8rem; opacity: 0.7;">Orçamento #2026-001</p>
+                <p style="font-size: 0.9rem; font-weight: 600;">George Batista | Fortaleza-CE</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="client-info">
+                <p style="color: #64748b; font-size: 0.9rem;">Preparado para:</p>
+                <h3 style="margin-top: 5px;">[Nome do Cliente ou Empresa]</h3>
+            </div>
+
+            <h1>Soluções em Networking Inteligente</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serviço</th>
+                        <th>Tecnologia</th>
+                        <th>Investimento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Cartão de Visita NFC</strong><br>
+                            <span style="font-size: 0.85rem; color: #64748b;">Cartão físico com acabamento premium e chip integrado.</span>
+                        </td>
+                        <td><span class="tech-tag">NFC TECH</span></td>
+                        <td>R$ 250,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Módulo de Realidade Aumentada</strong><br>
+                            <span style="font-size: 0.85rem; color: #64748b;">Ativação de conteúdo 3D e vídeo imersivo via câmera.</span>
+                        </td>
+                        <td><span class="tech-tag">AR EXPERIENCE</span></td>
+                        <td>R$ 250,00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="total-box">
+                <div>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">Investimento Total</p>
+                    <h2 style="font-size: 2rem; margin-top: 5px;">R$ 500,00</h2>
+                </div>
+                <a href="https://wa.me/5585987784930" class="btn-approve">APROVAR PROJETO</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Válido por 10 dias. Desenvolvido pela Input Criativo.</p>
+            <p>Ideias Entram. Inovação Explode.</p>
+        </div>
+    </div>
+
+</body>
+</html>

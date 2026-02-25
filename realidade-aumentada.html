@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia RA | Input Criativo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --p-green: #7cfc00; --p-cyan: #00f2d3; --p-blue: #0099cc;
+            --dark: #050a15; --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--dark); color: #fff; overflow-x: hidden; line-height: 1.6; }
+
+        /* Botão Voltar Fixo */
+        .btn-back {
+            position: fixed; top: 20px; left: 20px; z-index: 1000;
+            background: rgba(10, 15, 26, 0.8); border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 20px; border-radius: 50px; text-decoration: none; color: #fff;
+            backdrop-filter: blur(10px); font-weight: 600; font-size: 0.8rem;
+            transition: 0.3s; display: flex; align-items: center; gap: 10px;
+        }
+        .btn-back:hover { border-color: var(--p-cyan); color: var(--p-cyan); }
+
+        header { padding: 80px 5% 40px; text-align: center; }
+        header h1 { font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 15px; }
+        header h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .ra-container { max-width: 1100px; margin: 0 auto; padding: 0 5% 100px; }
+
+        .ra-card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px; margin-bottom: 50px; overflow: hidden;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            transition: 0.4s;
+        }
+        .ra-card:hover { border-color: var(--p-cyan); box-shadow: 0 0 30px rgba(0, 242, 211, 0.1); }
+
+        .video-box { background: #000; display: flex; align-items: center; justify-content: center; min-height: 400px; }
+        .video-box video { width: 100%; height: 100%; object-fit: cover; }
+
+        .info-box { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .info-box h2 { font-family: 'Montserrat'; font-size: 1.8rem; margin-bottom: 20px; color: var(--p-cyan); }
+        .info-box p { color: #cbd5e1; margin-bottom: 30px; }
+
+        .btn-action {
+            background: var(--gradient); color: #000; padding: 15px 30px;
+            border-radius: 50px; text-decoration: none; font-weight: 800;
+            text-align: center; font-size: 0.85rem; text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .info-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> VOLTAR AO INÍCIO</a>
+
+    <header>
+        <h1>Tecnologia <span>Imersiva RA</span></h1>
+        <p>Transforme o mundo físico em digital com a Input Criativo.</p>
+    </header>
+
+    <div class="ra-container">
+        
+        <div class="ra-card">
+            <div class="video-box">
+                <video autoplay muted loop playsinline>
+                    <source src="cartões interativos.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="info-box">
+                <h2>Cartões Interativos</h2>
+                <p>O seu cliente aponta a câmara para o seu cartão físico e vê o seu portfólio ganhar vida com elementos 3D e botões de contacto flutuantes.</p>
+                <a href="https://wa.me/5585987784930" class="btn-action">QUERO ESTA TECNOLOGIA</a>
+            </div>
+        </div>
+
+        <div class="ra-card">
+            <div class="info-box">
+                <h2>O Segredo do Rio Tapajós</h2>
+                <p>Veja como aplicamos a Realidade Aumentada no setor editorial. Capas de livros que contam histórias através de vídeos imersivos.</p>
+                <a href="https://wa.me/5585987784930" class="btn-action">SABER MAIS</a>
+            </div>
+            <div class="video-box">
+                <video autoplay muted loop playsinline>
+                    <source src="livro com realidade aumentada.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

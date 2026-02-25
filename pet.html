@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Space | Cuidado, Estilo & Tecnologia</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --p-green: #7cfc00;
+            --p-cyan: #00f2d3;
+            --p-blue: #0099cc;
+            --dark-bg: #0a0f1a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--dark-bg); color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* --- Botão Voltar ao Início (Padrão Input Criativo) --- */
+        .btn-back-home {
+            position: fixed; top: 30px; left: 5%; z-index: 1000;
+            background: rgba(10, 15, 26, 0.8); padding: 12px 25px;
+            border-radius: 50px; text-decoration: none; color: #fff;
+            border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(15px);
+            font-size: 0.85rem; font-weight: 600; transition: var(--transition);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .btn-back-home:hover { border-color: var(--p-cyan); transform: translateX(-5px); color: var(--p-cyan); }
+
+        /* --- Hero Section --- */
+        .hero-pet {
+            height: 80vh;
+            background: linear-gradient(rgba(10, 15, 26, 0.7), rgba(10, 15, 26, 0.9)), 
+                        url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 5%;
+        }
+
+        .hero-pet h1 { font-family: 'Montserrat'; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 20px; }
+        .hero-pet h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- Botão Padrão (Input Criativo) --- */
+        .btn-input-style {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 18px 45px; background: var(--gradient); color: #000;
+            text-decoration: none; font-weight: 800; border-radius: 50px;
+            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+            transition: var(--transition); box-shadow: 0 10px 20px rgba(0, 242, 211, 0.2);
+        }
+        .btn-input-style:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 242, 211, 0.4); }
+
+        /* --- Seção de Tecnologia Imersiva --- */
+        .tech-showcase {
+            padding: 100px 5%; display: flex; align-items: center; gap: 60px; flex-wrap: wrap;
+            background: rgba(0, 242, 211, 0.02);
+        }
+        .tech-video { flex: 1; min-width: 320px; border-radius: 30px; overflow: hidden; border: 1px solid var(--p-cyan); box-shadow: 0 0 40px rgba(0, 242, 211, 0.1); }
+        .tech-video video { width: 100%; display: block; }
+        .tech-content { flex: 1.2; min-width: 320px; }
+        .tech-content h2 { font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 20px; }
+
+        /* --- Grid de Serviços --- */
+        .pet-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 80px 5%; }
+        .pet-card {
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 40px;
+            border-radius: 30px; text-align: center; transition: var(--transition);
+        }
+        .pet-card:hover { border-color: var(--p-green); transform: translateY(-10px); background: rgba(124, 252, 0, 0.03); }
+        .pet-card i { font-size: 3rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; display: block; }
+
+        footer { text-align: center; padding: 60px 5%; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; font-size: 0.85rem; }
+
+        @media (max-width: 900px) {
+            .hero-pet h1 { font-size: 2.2rem; }
+            .tech-showcase { text-align: center; }
+            .btn-back-home { left: 50%; transform: translateX(-50%); top: 20px; width: 80%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back-home">
+        <i class="fas fa-arrow-left"></i> Voltar à Input Criativo
+    </a>
+
+    <section class="hero-pet">
+        <h1>Onde cada <span>Lambida</span> <br> conta uma história.</h1>
+        <p style="color: #94a3b8; margin-bottom: 40px; font-size: 1.2rem;">Estética pet de alto nível e cuidados veterinários em Fortaleza.</p>
+        <a href="https://wa.me/5585987784930" class="btn-input-style">Agendar Banho & Tosa <i class="fas fa-bolt"></i></a>
+    </section>
+
+    <section class="tech-showcase">
+        <div class="tech-video">
+            <video autoplay muted loop playsinline>
+                <source src="petcard.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="tech-content">
+            <h2>Tecnologia <span style="color: var(--p-cyan);">Imersiva Pet</span></h2>
+            <p style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px;">
+                Inovação exclusiva: Visualize como o seu melhor amigo ficará após a tosa ou com novos acessórios através da nossa Realidade Aumentada. O futuro do cuidado animal já começou.
+            </p>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <i class="fas fa-microchip" style="font-size: 2.5rem; color: var(--p-cyan);"></i>
+                <p style="font-size: 0.9rem; color: #94a3b8;"><strong>Pet Tag NFC:</strong> Identificação instantânea via aproximação para segurança total.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pet-services">
+        <div class="pet-card">
+            <i class="fas fa-cut"></i>
+            <h3>Tosa Stylist</h3>
+            <p>Cortes modernos e específicos para cada raça, garantindo o conforto e o visual do seu pet.</p>
+        </div>
+        <div class="pet-card">
+            <i class="fas fa-hot-tub"></i>
+            <h3>Spa Relaxante</h3>
+            <p>Produtos hipoalergênicos e hidromassagem para um momento de puro spa animal.</p>
+        </div>
+        <div class="pet-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Consultas Express</h3>
+            <p>Check-in rápido via NFC e atendimento veterinário com tecnologia de ponta.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Pet Space | Powered by George Batista - Input Criativo</p>
+        <p style="margin-top: 5px;">Fortaleza - Ceará</p>
+    </footer>
+
+</body>
+</html>

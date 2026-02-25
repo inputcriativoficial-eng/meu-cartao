@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Logomarcas | Input Criativo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --p-green: #7cfc00; --p-cyan: #00f2d3; --p-blue: #0099cc;
+            --dark: #050a15; --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--dark); color: #fff; line-height: 1.6; }
+
+        /* Botão Voltar Fixo */
+        .btn-back {
+            position: fixed; top: 25px; left: 5%; z-index: 1000;
+            background: rgba(15, 23, 42, 0.8); padding: 10px 22px;
+            border-radius: 50px; text-decoration: none; color: #fff;
+            border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+            font-size: 0.85rem; font-weight: 600; transition: var(--transition);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .btn-back:hover { border-color: var(--p-cyan); transform: translateX(-5px); color: var(--p-cyan); }
+
+        header { padding: 120px 5% 60px; text-align: center; }
+        header h1 { font-family: 'Montserrat'; font-size: 3rem; margin-bottom: 20px; }
+        header h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { color: #94a3b8; max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+
+        /* Galeria de Logos */
+        .logo-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; padding: 0 5% 100px; max-width: 1300px; margin: 0 auto;
+        }
+
+        .logo-card {
+            background: #fff; border-radius: 20px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1); transition: var(--transition);
+            position: relative; aspect-ratio: 1/1;
+        }
+        .logo-card:hover { transform: translateY(-10px) scale(1.02); }
+        .logo-card img { width: 100%; height: 100%; object-fit: cover; }
+
+        .logo-info {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px; opacity: 0; transition: 0.3s;
+        }
+        .logo-card:hover .logo-info { opacity: 1; }
+
+        /* CTA Section */
+        .cta-section { background: rgba(0, 242, 211, 0.03); padding: 100px 5%; text-align: center; border-radius: 50px; margin: 0 5% 100px; border: 1px solid rgba(0, 242, 211, 0.1); }
+        .btn-logo {
+            background: var(--gradient); color: #000; padding: 18px 45px;
+            border-radius: 50px; text-decoration: none; font-weight: 800;
+            display: inline-flex; align-items: center; gap: 12px;
+            text-transform: uppercase; font-size: 0.9rem; transition: var(--transition);
+        }
+        .btn-logo:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 242, 211, 0.4); }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .btn-back { top: 20px; left: 50%; transform: translateX(-50%); width: 80%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> VOLTAR AO INÍCIO</a>
+
+    <header>
+        <h1>Logomarcas <span>que Vendem</span></h1>
+        <p>Transformamos a essência do seu negócio em uma identidade visual memorável e lucrativa.</p>
+    </header>
+
+    <div class="logo-grid">
+        <div class="logo-card">
+            <img src="poliautos.logo.png" alt="Logo Poli-Autos">
+            <div class="logo-info"><h4>Setor Automotivo</h4></div>
+        </div>
+
+        <div class="logo-card">
+            <img src="acordes da promessa.logo.png" alt="Logo Acordes da Promessa">
+            <div class="logo-info"><h4>Gospel & Música</h4></div>
+        </div>
+
+        <div class="logo-card">
+            <img src="rodo san´s.jpeg" alt="Logo Rodo San's">
+            <div class="logo-info"><h4>Transporte e Logística</h4></div>
+        </div>
+
+        <div class="logo-card">
+            <img src="topzeramix.logo.png" alt="Logo Top Zera Mix">
+            <div class="logo-info"><h4>Varejo Digital</h4></div>
+        </div>
+
+        <div class="logo-card">
+            <img src="logo-bruno_black.logo.png" alt="Logo BRK">
+            <div class="logo-info"><h4>Serviços Técnicos</h4></div>
+        </div>
+
+        <div class="logo-card">
+            <img src="input criativo,logo.png" alt="Logo Input Criativo">
+            <div class="logo-info"><h4>Tecnologia e Inovação</h4></div>
+        </div>
+        <div class="logo-card">
+            <img src="vip jardim.png" alt="Logo Input Criativo">
+            <div class="logo-info"><h4>Tecnologia e Inovação</h4></div>
+        </div>
+        <div class="logo-card">
+            <img src="Atos.jpg" alt="Logo Input Criativo">
+            <div class="logo-info"><h4>Tecnologia e Inovação</h4></div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2 style="font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 25px;">Sua Marca Precisa de um <span>Novo Visual?</span></h2>
+        <p style="color: #94a3b8; margin-bottom: 40px;">Crie uma identidade que transmita autoridade e atraia os clientes certos.</p>
+        <a href="https://wa.me/5585987784930" class="btn-logo">SOLICITAR MINHA LOGO <i class="fas fa-paint-brush"></i></a>
+    </section>
+
+    <footer style="text-align: center; padding-bottom: 50px; color: #475569;">
+        <p>© 2026 Input Criativo | George Batista - Fortaleza/CE</p>
+    </footer>
+
+</body>
+</html>

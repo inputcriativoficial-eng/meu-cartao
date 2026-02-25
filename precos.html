@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Preços | Input Criativo</title>
+    <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --neon-green: #7cfc00;
+            --neon-cyan: #00f2d3;
+            --neon-blue: #0099cc;
+            --text-light: #f0f0f0;
+            --gradient: linear-gradient(135deg, var(--neon-green), var(--neon-cyan), var(--neon-blue));
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            overflow-x: auto;
+            border-radius: 15px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(0, 242, 211, 0.1);
+            color: var(--neon-cyan);
+            padding: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--glass-border);
+        }
+
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--glass-border);
+            font-size: 1rem;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+            transition: 0.3s;
+        }
+
+        .category {
+            font-weight: bold;
+            color: var(--neon-green);
+            background: rgba(124, 252, 0, 0.05);
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--neon-cyan);
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Botão com animação Neon */
+        .btn-budget {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 18px 40px;
+            background: var(--gradient);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+            animation: pulse-neon 2s infinite;
+        }
+
+        .btn-budget:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse-neon {
+            0% { box-shadow: 0 0 10px rgba(0, 242, 211, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(124, 252, 0, 0.7); }
+            100% { box-shadow: 0 0 10px rgba(0, 242, 211, 0.4); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            td, th { padding: 12px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tabela de Preços - Input Criativo</h1>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th style="text-align: right;">Investimento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category"><td colspan="2">Design Editorial & Ebooks</td></tr>
+                <tr><td>Diagramação de Ebook (por página)</td><td class="price">R$ 0,50 - R$ 2,50</td></tr>
+                <tr><td>Capa de Ebook de Alta Conversão</td><td class="price">R$ 50,00</td></tr>
+                
+                <tr class="category"><td colspan="2">Cartões de Visita Inteligentes</td></tr>
+                <tr><td>Cartão de Visita Digital (Interativo)</td><td class="price">R$ 100,00</td></tr>
+                <tr><td>Cartão com NFC (Design + Configuração)</td><td class="price">R$ 200,00</td></tr>
+                <tr><td>Cartão com Realidade Aumentada (RA)</td><td class="price">A partir de R$ 120,00</td></tr>
+
+                <tr class="category"><td colspan="2">Identidade Visual</td></tr>
+                <tr><td>Criação de Logomarca Profissional</td><td class="price">A partir de R$ 100,00</td></tr>
+                <tr><td>Layout de Orçamento Personalizado</td><td class="price">R$ 50,00</td></tr>
+
+                <tr class="category"><td colspan="2">Web & Presença Digital</td></tr>
+                <tr><td>Landing Page de Alta Conversão</td><td class="price">R$ 100,00+</td></tr>
+                <tr><td>Criação de Site Institucional</td><td class="price">A partir de R$ 450,00 </td></tr>
+
+                <tr class="category"><td colspan="2">Conteúdo & Criatividade</td></tr>
+                <tr><td>Vídeos para Redes Sociais (Edição)</td><td class="price">R$ 10,00 /unid</td></tr>
+                <tr><td>Letras de Músicas Personalizadas</td><td class="price">Sob Consulta</td></tr>
+                <tr><td>Criação de Currículo Moderno</td><td class="price">R$ 15,00</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="https://wa.me/55859XXXXXXXX?text=Olá%20George!%20Vim%20pelo%20site%20da%20Input%20Criativo%20e%20gostaria%20de%20um%20orçamento." 
+       class="btn-budget" 
+       target="_blank">
+       Solicitar Orçamento via WhatsApp
+    </a>
+
+</body>
+</html>

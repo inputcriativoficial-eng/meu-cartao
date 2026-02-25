@@ -1,0 +1,166 @@
+<section id="vitrines" class="section-padding" style="background: #050a15; padding: 100px 5%;">
+    <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: #fff;">Projetos <span style="background: linear-gradient(135deg, #7cfc00, #00f2d3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">High-End</span></h2>
+        <p style="color: #94a3b8; font-size: 1.1rem; margin-top: 15px;">Não vendemos apenas sites. Construímos máquinas de vendas personalizadas.</p>
+    </div>
+
+    <div class="showcase-grid-professional">
+        <div class="pro-card">
+            <div class="pro-visual">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800" alt="Moda Premium">
+                <div class="pro-overlay">
+                    <span class="tech-tag">UX/UI Design</span>
+                </div>
+            </div>
+            <div class="pro-body">
+                <h3>Fashion & Lifestyle</h3>
+                <p>Plataforma focada em **branding sensorial**, com carregamento ultra-rápido para reduzir o abandono de carrinho.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Catálogo Interativo</li>
+                    <li><i class="fas fa-check-circle"></i> Checkout em 1-Clique</li>
+                </ul>
+                <div class="pro-footer">
+                    <a href="#" class="smart-btn-slim">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pro-card">
+            <div class="pro-visual">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800" alt="Saúde e Medicina">
+                <div class="pro-overlay">
+                    <span class="tech-tag">Agendamento Online</span>
+                </div>
+            </div>
+            <div class="pro-body">
+                <h3>Medicina & Bem-Estar</h3>
+                <p>Sites institucionais para clínicas que buscam **autoridade imediata** e conversão direta via WhatsApp ou CRM.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> SEO Local (Fortaleza-CE)</li>
+                    <li><i class="fas fa-check-circle"></i> Telemedicina Integrada</li>
+                </ul>
+                <div class="pro-footer">
+                    <a href="#" class="smart-btn-slim">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pro-card">
+            <div class="pro-visual">
+                <img src="Volvo FH 540 6x4.jpeg" alt="Setor de Caminhões">
+                <div class="pro-overlay">
+                    <span class="tech-tag">NFC Management</span>
+                </div>
+            </div>
+            <div class="pro-body">
+                <h3>Truck Power Elite</h3>
+                <p>Ecossistema digital para pátios de veículos pesados. Integração com **gestão NFC** e filtros avançados.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Filtro de Frota Inteligente</li>
+                    <li><i class="fas fa-check-circle"></i> Tecnologia de Pátio Digital</li>
+                </ul>
+                <div class="pro-footer">
+                    <a href="#" class="smart-btn-slim">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Grid de Alta Performance */
+    .showcase-grid-professional {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .pro-card {
+        background: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 30px;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pro-card:hover {
+        transform: translateY(-15px);
+        border-color: #00f2d3;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Estilo Visual */
+    .pro-visual {
+        height: 240px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pro-visual img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: 0.8s ease;
+    }
+
+    .pro-card:hover .pro-visual img { transform: scale(1.15); }
+
+    .pro-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, #0f172a, transparent);
+        display: flex; align-items: flex-end; padding: 20px;
+    }
+
+    .tech-tag {
+        background: rgba(0, 242, 211, 0.1);
+        color: #00f2d3;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        border: 1px solid rgba(0, 242, 211, 0.2);
+    }
+
+    /* Corpo do Card Detalhado */
+    .pro-body { padding: 35px; flex-grow: 1; }
+    .pro-body h3 { font-size: 1.6rem; margin-bottom: 15px; font-weight: 800; color: #fff; }
+    .pro-body p { color: #94a3b8; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+
+    .feature-list {
+        list-style: none; margin-bottom: 30px;
+    }
+
+    .feature-list li {
+        color: #fff; font-size: 0.85rem; font-weight: 600;
+        margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+    }
+
+    .feature-list i { color: #7cfc00; font-size: 0.9rem; }
+
+    /* Botão Slim Reajustado */
+    .pro-footer { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; text-align: center; }
+
+    .smart-btn-slim {
+        display: inline-flex;
+        padding: 12px 35px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.8rem;
+        transition: 0.4s;
+    }
+
+    .smart-btn-slim:hover {
+        background: linear-gradient(135deg, #7cfc00, #00f2d3);
+        color: #000;
+        border-color: transparent;
+        box-shadow: 0 0 20px rgba(124, 252, 0, 0.4);
+    }
+</style>

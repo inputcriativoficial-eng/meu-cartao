@@ -1,0 +1,128 @@
+<section id="ebooks" class="section-padding" style="background: #050a15; padding: 100px 5%;">
+    <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 3rem; color: #fff;">Design <span style="background: linear-gradient(135deg, #7cfc00, #00f2d3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Editorial</span></h2>
+        <p style="color: #94a3b8; font-size: 1.1rem; margin-top: 15px;">Transformamos manuscritos em Best-Sellers digitais com diagramação profissional.</p>
+    </div>
+
+    <div class="ebook-grid">
+        <div class="ebook-card">
+            <div class="ebook-visual">
+                <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=800" alt="Ficção Científica">
+                <div class="ebook-badge">Sci-Fi Series</div>
+            </div>
+            <div class="ebook-content">
+                <span class="ebook-category">Série 12 Volumes</span>
+                <h3>A Sinfonia do Vazio</h3>
+                <p>Diagramação épica para séries complexas, com foco em imersão e worldbuilding visual.</p>
+                <div class="ebook-tags">
+                    <span>Amazon KDP</span>
+                    <span>ePub Profissional</span>
+                </div>
+                <a href="#" class="smart-btn-slim">Ver Portfólio <i class="fas fa-book-open"></i></a>
+            </div>
+        </div>
+
+        <div class="ebook-card">
+            <div class="ebook-visual">
+                <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?auto=format&fit=crop&q=80&w=800" alt="Mistério e Suspense">
+                <div class="ebook-badge">Thriller</div>
+            </div>
+            <div class="ebook-content">
+                <span class="ebook-category">Suspense Regional</span>
+                <h3>O Segredo do Tapajós</h3>
+                <p>Design de capa e interior que capturam a essência do mistério, otimizados para leitura fluida.</p>
+                <div class="ebook-tags">
+                    <span>Design de Capa</span>
+                    <span>Marketing de Lançamento</span>
+                </div>
+                <a href="#" class="smart-btn-slim">Ver Portfólio <i class="fas fa-book-open"></i></a>
+            </div>
+        </div>
+
+        <div class="ebook-card">
+            <div class="ebook-visual">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="Finanças para Iniciantes">
+                <div class="ebook-badge">Finance</div>
+            </div>
+            <div class="ebook-content">
+                <span class="ebook-category">Infoprodutos Digitais</span>
+                <h3>Finanças para Iniciantes</h3>
+                <p>Estrutura visual para cursos e ebooks educativos, facilitando o aprendizado com design limpo.</p>
+                <div class="ebook-tags">
+                    <span>Layout Didático</span>
+                    <span>Lead Magnet</span>
+                </div>
+                <a href="#" class="smart-btn-slim">Ver Portfólio <i class="fas fa-book-open"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .ebook-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .ebook-card {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        transition: transform 0.4s ease;
+    }
+
+    .ebook-card:hover {
+        transform: scale(1.03);
+        border-color: #00f2d3;
+    }
+
+    .ebook-visual {
+        height: 250px;
+        position: relative;
+    }
+
+    .ebook-visual img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .ebook-badge {
+        position: absolute; top: 15px; left: 15px;
+        background: var(--gradient); color: #000;
+        padding: 4px 12px; border-radius: 5px;
+        font-size: 0.65rem; font-weight: 800; text-transform: uppercase;
+    }
+
+    .ebook-content { padding: 25px; }
+    
+    .ebook-category {
+        color: #7cfc00; font-size: 0.75rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    .ebook-content h3 { font-size: 1.4rem; margin: 10px 0; color: #fff; }
+    .ebook-content p { color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+
+    .ebook-tags { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    
+    .ebook-tags span {
+        background: rgba(255,255,255,0.05); color: #cbd5e1;
+        padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .smart-btn-slim {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 10px 25px; border-radius: 50px; background: rgba(0, 242, 211, 0.1);
+        color: #00f2d3; text-decoration: none; font-weight: 700; font-size: 0.8rem;
+        border: 1px solid rgba(0, 242, 211, 0.2); transition: 0.3s;
+    }
+
+    .smart-btn-slim:hover {
+        background: var(--gradient); color: #000; border-color: transparent;
+        box-shadow: 0 0 15px rgba(0, 242, 211, 0.4);
+    }
+</style>
