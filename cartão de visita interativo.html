@@ -1,0 +1,129 @@
+<section id="vantagens-nfc" class="section-padding" style="background: #050a15; padding: 120px 5%; position: relative;">
+    
+    <a href="index.html" class="btn-back-nfc">
+        <i class="fas fa-arrow-left"></i> Voltar ao Início
+    </a>
+
+    <div class="container-flex" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 80px; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="phone-mockup">
+            <div class="phone-speaker"></div>
+            <div class="phone-screen">
+                <img src="cartãogeorge.png" alt="Amostra Cartão Digital" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="phone-home-bar"></div>
+        </div>
+
+        <div class="benefits-content" style="flex: 1; min-width: 320px; max-width: 550px;">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.8rem; color: #fff; margin-bottom: 25px; line-height: 1.2;">
+                O Fim dos <br><span style="background: linear-gradient(135deg, #7cfc00, #00f2d3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cartões de Papel</span>
+            </h2>
+            <p style="color: #94a3b8; font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6;">
+                Dê um upgrade no seu networking com a tecnologia da **Input Criativo**. Mais do que um contacto, proporcione uma experiência digital memorável.
+            </p>
+
+            <div class="benefit-item">
+                <i class="fas fa-leaf"></i>
+                <div>
+                    <h4>Sustentabilidade e Economia</h4>
+                    <p>Pare de gastar fortunas com gráficas. Um único investimento para uso ilimitado e sem desperdício.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <i class="fas fa-sync"></i>
+                <div>
+                    <h4>Atualizações Instantâneas</h4>
+                    <p>Mudou de telefone ou endereço? Atualize seu link em segundos sem precisar imprimir nada novo.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 45px;">
+                <a href="https://wa.me/5585987784930" class="btn-nfc-standard">
+                    SOLICITAR MEU CARTÃO NFC <i class="fas fa-bolt"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --p-green: #7cfc00;
+        --p-cyan: #00f2d3;
+        --p-blue: #0099cc;
+        --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+    }
+
+    /* Botão Voltar ao Início */
+    .btn-back-nfc {
+        position: absolute;
+        top: 40px;
+        left: 5%;
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: var(--transition);
+        opacity: 0.7;
+        font-weight: 600;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .btn-back-nfc:hover { opacity: 1; color: var(--p-cyan); transform: translateX(-5px); background: rgba(255, 255, 255, 0.1); }
+
+    /* Botão Padrão da Imagem 3 */
+    .btn-nfc-standard {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 38px;
+        background: var(--gradient);
+        color: #000;
+        text-decoration: none;
+        font-weight: 800;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: var(--transition);
+        box-shadow: 0 10px 20px rgba(0, 242, 211, 0.2);
+    }
+    .btn-nfc-standard:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 242, 211, 0.4);
+    }
+
+    /* Estilos do Mockup e Benefícios */
+    .phone-mockup {
+        width: 290px;
+        height: 590px;
+        background: #000;
+        border: 12px solid #1a1a1a;
+        border-radius: 45px;
+        position: relative;
+        box-shadow: 0 0 30px rgba(124, 252, 0, 0.2); 
+        animation: phone-float 4s infinite ease-in-out;
+    }
+    @keyframes phone-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); box-shadow: 0 30px 60px rgba(124, 252, 0, 0.4); }
+    }
+    .phone-screen { width: 100%; height: 100%; border-radius: 33px; overflow: hidden; }
+    .benefit-item { display: flex; gap: 20px; margin-bottom: 25px; }
+    .benefit-item i { font-size: 1.5rem; color: var(--p-green); margin-top: 5px; }
+    .benefit-item h4 { color: #fff; font-size: 1.25rem; margin-bottom: 5px; }
+    .benefit-item p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+
+    @media (max-width: 900px) {
+        .container-flex { flex-direction: column; text-align: center; }
+        .benefit-item { text-align: left; }
+        .btn-back-nfc { top: 25px; left: 50%; transform: translateX(-50%); }
+        .btn-back-nfc:hover { transform: translateX(-50%) scale(1.05); }
+    }
+</style>

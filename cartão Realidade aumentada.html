@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realidade Aumentada | Input Criativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --p-green: #7cfc00;
+            --p-cyan: #00f2d3;
+            --p-blue: #0099cc;
+            --dark: #050a15;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gradient: linear-gradient(135deg, var(--p-green), var(--p-cyan), var(--p-blue));
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--dark); color: #fff; line-height: 1.6; }
+
+        /* --- Botão Voltar ao Início --- */
+        .btn-back-home {
+            position: fixed; top: 25px; left: 5%; z-index: 1000;
+            background: rgba(15, 23, 42, 0.8); padding: 10px 22px;
+            border-radius: 50px; text-decoration: none; color: #fff;
+            border: 1px solid var(--glass-border); backdrop-filter: blur(10px);
+            font-size: 0.85rem; font-weight: 600; transition: var(--transition);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .btn-back-home:hover { border-color: var(--p-cyan); transform: translateX(-5px); color: var(--p-cyan); }
+
+        /* --- Cabeçalho --- */
+        header { padding: 100px 5% 40px; text-align: center; }
+        .logo-text { font-family: 'Montserrat'; font-weight: 900; font-size: 1.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- Seção de Vídeos --- */
+        .ra-container { max-width: 1200px; margin: 0 auto; padding: 0 5% 100px; }
+        
+        .step-card {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px;
+            align-items: center; margin-bottom: 80px;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+            border-radius: 30px; overflow: hidden; padding: 40px;
+        }
+
+        .step-card:nth-child(even) { grid-template-columns: 1.2fr 1fr; }
+        .step-card:nth-child(even) .video-box { order: 2; }
+
+        .video-box video { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+        .content h2 { font-family: 'Montserrat'; font-size: 2.2rem; margin-bottom: 20px; line-height: 1.1; }
+        .content h2 span { color: var(--p-cyan); }
+        .content p { color: #94a3b8; font-size: 1.1rem; margin-bottom: 30px; }
+
+        /* --- Botão Padrão do Site --- */
+        .btn-nfc-standard {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 16px 38px; background: var(--gradient); color: #000;
+            text-decoration: none; font-weight: 800; border-radius: 50px;
+            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+            transition: var(--transition); box-shadow: 0 10px 20px rgba(0, 242, 211, 0.2);
+        }
+        .btn-nfc-standard:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 242, 211, 0.4); }
+
+        @media (max-width: 900px) {
+            .step-card, .step-card:nth-child(even) { grid-template-columns: 1fr; text-align: center; }
+            .step-card:nth-child(even) .video-box { order: 0; }
+            .btn-back-home { top: 20px; left: 50%; transform: translateX(-50%); }
+            .btn-back-home:hover { transform: translateX(-50%) scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back-home">
+        <i class="fas fa-arrow-left"></i> Voltar ao Início
+    </a>
+
+    <header>
+        <div class="logo-text">INPUT CRIATIVO</div>
+        <h1 style="font-family: 'Montserrat'; font-size: 3rem; margin-top: 20px;">O Futuro do <span>Networking</span></h1>
+    </header>
+
+    <div class="ra-container">
+        
+        <div class="step-card">
+            <div class="video-box">
+                <video autoplay muted loop playsinline>
+                    <source src="O Cartão que Ganha Vida.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="content">
+                <h2>O Cartão que <span>Ganha Vida</span></h2>
+                <p>Abandone os cartões que acabam no lixo. Com a tecnologia da **Input Criativo**, ao aproximar o telemóvel, o seu portfólio (como o eBook "O Segredo do Rio Tapajós") salta do papel.</p>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="content">
+                <h2>Experiência <span>Imersiva 3D</span></h2>
+                <p>A Realidade Aumentada transforma o seu cartão físico num ecrã interativo com ícones flutuantes de WhatsApp, Instagram e vídeos integrados.</p>
+            </div>
+            <div class="video-box">
+                <video autoplay muted loop playsinline>
+                    <source src="Experiência Imersiva 3D.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="video-box">
+                <video autoplay muted loop playsinline>
+                    <source src="Feche Negócios com Um Toque.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="content">
+                <h2>Feche Negócios com <span>Um Toque</span></h2>
+                <p>Surpreenda os seus clientes e demonstre o seu portfólio de forma inovadora para fechar parcerias instantaneamente.</p>
+                <a href="https://wa.me/5585987784930" class="btn-nfc-standard">PEDIR MEU CARTÃO AGORA <i class="fas fa-bolt"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 50px; border-top: 1px solid var(--glass-border); color: #64748b;">
+        <p>© 2026 Input Criativo | George Batista</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Fortaleza - Ceará</p>
+    </footer>
+
+</body>
+</html>
