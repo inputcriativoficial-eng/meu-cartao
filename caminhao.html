@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Power | Elite em Veículos Pesados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0099cc; /* Azul Input Criativo */
+            --accent: #7cfc00;  /* Verde-Limão */
+            --bg-dark: #030712;
+            --card-bg: #0f172a;
+            --text-main: #f8fafc;
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            background: radial-gradient(circle at center, rgba(0, 153, 204, 0.15) 0%, transparent 70%),
+                        linear-gradient(0deg, var(--bg-dark) 5%, transparent 50%),
+                        url('https://images.unsplash.com/photo-1501700493717-9af982c78699?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .hero-content { max-width: 900px; text-align: center; z-index: 2; }
+        .hero h1 { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem); 
+            font-weight: 900; 
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        .hero h1 span { 
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- BOTÕES PROFISSIONAIS ESTILIZADOS --- */
+        .btn-premium {
+            position: relative;
+            display: inline-block;
+            padding: 16px 35px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0077a3 100%);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 153, 204, 0.3);
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-premium::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%;
+            width: 50px; height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(30deg);
+            transition: 0.5s;
+        }
+
+        .btn-premium:hover::after { left: 120%; }
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(124, 252, 0, 0.4);
+            border-color: var(--accent);
+        }
+
+        .btn-card {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-card:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- Grid de Inventário --- */
+        .section-padding { padding: 80px 5%; }
+        .grid-header { margin-bottom: 50px; border-left: 4px solid var(--primary); padding-left: 20px; }
+        .grid-header h2 { font-size: 2.5rem; font-family: 'Montserrat', sans-serif; }
+
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .truck-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+
+        .truck-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+
+        .truck-img-wrapper {
+            position: relative;
+            height: 220px;
+            background: #1e293b; /* Fallback caso a imagem falhe */
+        }
+
+        .truck-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .badge-new {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: var(--accent);
+            color: #000;
+            padding: 4px 12px;
+            font-weight: 800;
+            font-size: 0.65rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .truck-content { padding: 25px; }
+        .truck-content h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        
+        .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+            padding: 15px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .spec-item { font-size: 0.8rem; color: #94a3b8; display: flex; align-items: center; gap: 8px; }
+        .spec-item i { color: var(--primary); }
+
+        .price-tag { font-size: 1.6rem; font-weight: 900; color: var(--accent); display: block; }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TRUCK <span>POWER</span></h1>
+            <p style="color: #94a3b8; margin-bottom: 30px;">Elite em veículos pesados e tecnologia de ponta.</p>
+            <a href="#estoque" class="btn-premium">Ver Estoque Atualizado</a>
+        </div>
+    </section>
+
+    <div id="estoque" class="section-padding">
+        <div class="grid-header">
+            <span style="color: var(--primary); font-weight: 800; font-size: 0.8rem; text-transform: uppercase;">Destaques</span>
+            <h2>Frota de Elite</h2>
+        </div>
+
+        <div class="inventory-grid">
+            <div class="truck-card">
+                <div class="truck-img-wrapper">
+                    <span class="badge-new">Destaque</span>
+                    <img src="Volvo FH 540 6x4.jpeg" alt="Volvo FH 540">
+                </div>
+                <div class="truck-content">
+                    <span style="color: var(--primary); font-size: 0.8rem; font-weight: bold;">Caminhão Tracionado</span>
+                    <h3>Volvo FH 540 6x4</h3>
+                    <div class="specs">
+                        <div class="spec-item"><i class="fas fa-road"></i> 240.000 KM</div>
+                        <div class="spec-item"><i class="fas fa-cog"></i> Automático</div>
+                        <div class="spec-item"><i class="fas fa-calendar-alt"></i> 2021/2021</div>
+                        <div class="spec-item"><i class="fas fa-couch"></i> Teto Alto</div>
+                    </div>
+                    <span class="price-tag">R$ 640.000</span>
+                    <a href="#" class="btn-premium btn-card">Tenho Interesse</a>
+                </div>
+            </div>
+
+            <div class="truck-card">
+                <div class="truck-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Scania R440">
+                </div>
+                <div class="truck-content">
+                    <span style="color: var(--primary); font-size: 0.8rem; font-weight: bold;">Econômico / Longa Distância</span>
+                    <h3>Scania R440 Streamline</h3>
+                    <div class="specs">
+                        <div class="spec-item"><i class="fas fa-road"></i> 410.000 KM</div>
+                        <div class="spec-item"><i class="fas fa-cog"></i> Opticruise</div>
+                        <div class="spec-item"><i class="fas fa-calendar-alt"></i> 2018/2019</div>
+                        <div class="spec-item"><i class="fas fa-bed"></i> Cabine Leito</div>
+                    </div>
+                    <span class="price-tag">R$ 490.000</span>
+                    <a href="#" class="btn-premium btn-card">Tenho Interesse</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 Truck Power | <strong>Input Criativo</strong></p>
+    </footer>
+
+</body>
+</html>
